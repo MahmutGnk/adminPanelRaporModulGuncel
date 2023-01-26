@@ -1,0 +1,89 @@
+﻿<link rel="stylesheet" href="~/css/style.css">
+@model IEnumerable<AdminPanelRaporModul.Models.ProductOrder>
+
+    @*<aside id="sidebar">
+            <div class="sidebar-title">
+                <div class="sidebar-brand">
+                    <span class="material-icons-outlined">dashboard</span> Rapor Paneli
+                </div>
+                <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+            </div>
+
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                        <span class="material-icons-outlined">dashboard</span> Dashboard
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="Customer/index">
+                        <span class="material-icons-outlined">groups</span> Müşteriler
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                        <span class="material-icons-outlined">category</span> Kategoriler
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                        <span class="material-icons-outlined">fact_check</span> Envanter
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                        <span class="material-icons-outlined">inventory_2</span> Arşiv
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                        <span class="material-icons-outlined">poll</span> Raporlar
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" target="_blank">
+                        <span class="material-icons-outlined">settings</span> Ayarlar
+                    </a>
+                </li>
+            </ul>
+        </aside>*@
+
+    <h1>Müşteri Sayfası</h1>
+
+<h2>@Model.Count()</h2>
+
+
+@*@if (Model.Count() > 0)
+{
+    @foreach (var a in Model)
+    {
+        <li>---------------
+        <h3>@a.musteri</h3>
+        </li>
+        <br />
+    }
+}
+else
+{
+  <h1>sonuc yok</h1>  
+}*@
+
+<table>
+    <tr>
+        <th>
+            @if (Model.Count() > 0)
+            {
+                @foreach (var item in Model)
+                {
+                   <h3> @item.musteri</h3>
+
+                    <br />
+                }
+                @foreach (var item in Model)
+                {
+                    <h3>@item.product_id, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @item.price</h3>
+                }
+            }
+        </th>
+    </tr>
+</table>
